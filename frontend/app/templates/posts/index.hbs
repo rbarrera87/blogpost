@@ -1,0 +1,16 @@
+<h1>POSTS</h1>
+{{#each model as |post|}}
+  <p>{{post.id}}</p>
+  <p>{{post.title}}</p>
+  <p>{{post.body}}</p>
+  <button {{action 'deletePost' post}}>Borrar</button>
+  <p>comments:</p>
+    {{#each post.comments as |comment|}}
+      {{comment.body}}
+    {{else}}
+      <p>no comments</p>
+    {{/each}}
+    {{#link-to "posts.post" post}}Details{{/link-to}}
+  <hr>
+{{/each}}
+{{#link-to "posts.new"}}New Post{{/link-to}}

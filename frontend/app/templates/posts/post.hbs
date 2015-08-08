@@ -1,0 +1,6 @@
+<p>id: {{model.id}}</p>
+<p>title: {{model.title}}</p>
+<p>body: {{model.body}}</p>
+{{#each model.comments as |comment|}}
+  Comment: {{comment.body}}
+{{/each}}
